@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block maincontent %}
+
+<h1>List</h1>
+
+{% if failed %}
+
+    <strong>Warp creation failed!</strong> Check your credentials and try again.
+
+{% endif %}
+
+<form class="form" action= "/list" method="POST">
+	<label for="name">Name</label>
+	<input type="text" value="{{ name }}" name="name"/>
+	<label for="warp_ids">Warp IDs</label>
+	<input type="text" value="{{ warp_ids }}" name="warp_ids"/>
+	<button type="submit" class="btn">Create</button>
+</form>
+
+{% endblock %}

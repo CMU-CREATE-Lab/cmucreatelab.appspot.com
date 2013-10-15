@@ -1,0 +1,30 @@
+application: cmucreatelab
+version: 2013100401
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /signup
+  script: main.app
+  secure: always
+
+- url: /login
+  script: main.app
+  secure: always
+
+- url: /forgot
+  script: main.app
+  secure: always
+
+- url: .*
+  script: main.app
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
